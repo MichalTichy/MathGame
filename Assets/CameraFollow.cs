@@ -12,6 +12,10 @@ public class CameraFollow : MonoBehaviour {
 	public Vector3 minCameraPosition;
 	public Vector3 maxCameraPosition;
 
+	private float xDiff;
+	private float moveTrashold = 6;
+	float speed=7f;
+
     // Use this for initialization
 	void Start ()
 	{
@@ -22,8 +26,20 @@ public class CameraFollow : MonoBehaviour {
 	// Update is called once per frame
 	void LateUpdate ()
 	{
+		// difference between camera and player position
+		if (player.transform.position.x > transform.position.x) {	
+			xDiff = player.transform.position.x - transform.position.x;
+		} 
+		else {
+			xDiff = transform.position.x - player.transform.position.x;
+		}
+			
+		if (xDiff >= moveTrashold) {
+		
+			offset = player.transform.position;
 
-		transform.position = player.position + offset;
+			transform.position = Vector3.MoveTowards(transform.position, offset, speed * Time.deltaTime );
+		}
 
 		if (bounds) {
 		
