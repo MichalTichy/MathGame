@@ -5,7 +5,7 @@ using UnityEngine;
 public class CharacterMovement : MonoBehaviour {
 
 
-    float moveSpeed=7f;
+    public float moveSpeed=7f;
     
     // Use this for initialization
     void Start () {
