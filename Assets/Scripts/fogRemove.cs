@@ -12,6 +12,7 @@ public class fogRemove : MonoBehaviour
     void Start()
     {
         rend = GetComponent<SpriteRenderer>();
+        rend.enabled = true;
     }
 
     void Update()
