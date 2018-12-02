@@ -26,16 +26,13 @@ public class Stairs : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D other)
     {
-        bool teleported = false;
         if (AllowUp && Input.GetKeyDown(KeyCode.W))
         {
             TeleportedObject.transform.position = TargetPositionUp.transform.position;
-            teleported = true;
         }
         else if (AllowDown && Input.GetKeyDown(KeyCode.S))
         {
             TeleportedObject.transform.position = TargetPositionDown.transform.position;
-            teleported = true;
         }
     }
 }
