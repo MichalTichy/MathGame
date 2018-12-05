@@ -6,23 +6,26 @@ using UnityEngine;
 public abstract class CharacterInteraction : MonoBehaviour
 {
 
-
+    protected bool canInitialize = true;
     void OnTriggerStay2D(Collider2D other)
     {
+        if (!canInitialize)
+            return;
+
         if (Input.GetKeyDown(KeyCode.E))
         {
             Initialize();
         }
     }
 
+
     public virtual void Initialize()
     {
         if (!ArePreConditionsMet())
             return;
 
+        canInitialize = false;
         Setup();
-
-        
     }
 
     public virtual void End()
@@ -30,6 +33,10 @@ public abstract class CharacterInteraction : MonoBehaviour
         if (ArePostConditionsMet())
             AwardPlayer();
         
+    }
+
+    public virtual void Cancel()
+    {
     }
 
     public abstract void AwardPlayer();
@@ -52,8 +59,7 @@ public abstract class CharacterInteraction : MonoBehaviour
 
 public abstract class CharacterInteractionWithSceneSwitching : CharacterInteraction
 {
-    public Camera SourceCamera;
-    public Camera TargetCamera;
+    public GameObject puzzle;
 
     public override void Initialize()
     {
@@ -67,18 +73,24 @@ public abstract class CharacterInteractionWithSceneSwitching : CharacterInteract
         TransferControlBackToMainGame();
     }
 
+    public override void Cancel()
+    {
+        base.Cancel();
+        TransferControlBackToMainGame();
+    }
+
     protected virtual void TransferControl()
     {
+        canInitialize = false;
         CharacterMovement.Enabled = false;
-        SourceCamera.enabled = false;
-        TargetCamera.enabled = true;
+        puzzle.SetActive(true);
     }
 
     protected virtual void TransferControlBackToMainGame()
     {
+        canInitialize = true;
         CharacterMovement.Enabled = true;
-        TargetCamera.enabled = false;
-        SourceCamera.enabled = true;
+        puzzle.SetActive(false);
     }
 }
 
