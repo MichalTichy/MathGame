@@ -17,11 +17,9 @@ public class CharacterMovement : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-	    if (!Enabled)
-	    {
-	        GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
-	    }
-	    GetComponent<Rigidbody2D>().velocity=new Vector2(moveSpeed * Input.GetAxis("Horizontal"),0);
+	    GetComponent<Rigidbody2D>().velocity = !Enabled ? 
+            new Vector2(0,0) :
+            new Vector2(moveSpeed * Input.GetAxis("Horizontal"),0);
 	}
 
 }
