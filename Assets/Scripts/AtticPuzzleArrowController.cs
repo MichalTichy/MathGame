@@ -54,7 +54,7 @@ public class AtticPuzzleArrowController : MonoBehaviour
         }
     }
 
-    private bool VerifyCode()
+    public bool VerifyCode()
     {
         for (int i = 0; i < password.Length; i++)
         {

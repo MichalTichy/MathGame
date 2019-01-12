@@ -5,8 +5,8 @@ public class AtticInteraction : CharacterInteractionWithSceneSwitching
 {
     [Header("Award")]
     public Stairs stairs;
-    [Header("Character stuffs to disable")]
-    public Canvas characterCanvas;
+
+    public AtticPuzzleArrowController Controller;
     public override void AwardPlayer()
     {
         UnityEngine.Debug.Log("Attic completed!");
@@ -19,5 +19,10 @@ public class AtticInteraction : CharacterInteractionWithSceneSwitching
     protected override void Setup()
     {
         UnityEngine.Debug.Log("Interaction triggered");
+    }
+
+    public override bool ArePostConditionsMet()
+    {
+        return Controller.VerifyCode() && base.ArePostConditionsMet();
     }
 }

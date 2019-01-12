@@ -5,38 +5,61 @@ using UnityEngine;
 
 public abstract class CharacterInteraction : MonoBehaviour
 {
+    [Header("Character stuffs to disable")]
+    public BoxCollider2D characterColider;
+    public Canvas characterCanvas;
 
-    protected bool canInitialize = true;
+    private bool _isActive;
+    
+    public virtual bool IsActive
+    {
+        get { return _isActive; }
+    }
+
     void OnTriggerStay2D(Collider2D other)
     {
-        if (!canInitialize)
-            return;
-
         if (Input.GetKeyDown(KeyCode.E))
         {
-            Initialize();
+            StartInteraction();
         }
     }
 
 
-    public virtual void Initialize()
+    public virtual void StartInteraction()
     {
-        if (!ArePreConditionsMet())
+        if (!ArePreConditionsMet() || IsActive)
             return;
 
-        canInitialize = false;
+        _isActive = true;
+        
+        ChangeInteractionState(false);
+
         Setup();
     }
 
     public virtual void End()
     {
         if (ArePostConditionsMet())
+        {
             AwardPlayer();
-        
+        }
+        else
+        {
+            ChangeInteractionState(true);
+        }
     }
 
-    public virtual void Cancel()
+    protected virtual void ChangeInteractionState(bool enabled)
     {
+        if (characterColider!=null)
+        {
+            characterColider.enabled = enabled;
+        }
+
+        if (characterCanvas!=null)
+        {
+            characterCanvas.enabled = enabled;
+        }
     }
 
     public abstract void AwardPlayer();
@@ -56,14 +79,38 @@ public abstract class CharacterInteraction : MonoBehaviour
 
 }
 
+public abstract class CharacterTextBubbleInteraction : CharacterInteraction
+{
+    public DialogBubble DialogBubble;
+    
+
+    public override void StartInteraction()
+    {
+        base.StartInteraction();
+
+
+
+        ChangeInteractionState(false);
+        DialogBubble.OnClose += () =>
+        {
+
+            UnityEngine.Debug.Log("Bubble closed");
+            ChangeInteractionState(true);
+            
+        };
+
+        DialogBubble.ShowBubble();
+    }
+}
+
 
 public abstract class CharacterInteractionWithSceneSwitching : CharacterInteraction
 {
     public GameObject puzzle;
 
-    public override void Initialize()
+    public override void StartInteraction()
     {
-        base.Initialize();
+        base.StartInteraction();
         TransferControl();
     }
 
@@ -73,22 +120,14 @@ public abstract class CharacterInteractionWithSceneSwitching : CharacterInteract
         TransferControlBackToMainGame();
     }
 
-    public override void Cancel()
-    {
-        base.Cancel();
-        TransferControlBackToMainGame();
-    }
-
     protected virtual void TransferControl()
     {
-        canInitialize = false;
         CharacterMovement.Enabled = false;
         puzzle.SetActive(true);
     }
 
     protected virtual void TransferControlBackToMainGame()
     {
-        canInitialize = true;
         CharacterMovement.Enabled = true;
         puzzle.SetActive(false);
     }
