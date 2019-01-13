@@ -11,7 +11,7 @@ public class DogInteraction : CharacterInteractionWithSceneSwitching
         UnityEngine.Debug.Log("Dog completed!");
     }
 
-    protected override void ChangeInteractionState(bool enabled)
+    public override void ChangeInteractionState(bool enabled)
     {
         AwardCollider.enabled = enabled;
 

@@ -14,6 +14,10 @@ public class Stairs : MonoBehaviour
     public Transform TargetPositionUp;
 
     public Transform TargetPositionDown;
+
+    public CharacterInteraction AccessDeniedUpInteraction;
+
+    public CharacterInteraction AccessDeniedDownInteraction;
 	// Use this for initialization
 	void Start () {
 		
@@ -26,13 +30,19 @@ public class Stairs : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D other)
     {
-        if (AllowUp && Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W))
         {
-            TeleportedObject.transform.position = TargetPositionUp.transform.position;
+            if (AllowUp)
+                TeleportedObject.transform.position = TargetPositionUp.transform.position;
+            else
+                AccessDeniedUpInteraction?.StartInteraction();
         }
-        else if (AllowDown && Input.GetKeyDown(KeyCode.S))
+        else if (Input.GetKeyDown(KeyCode.S))
         {
-            TeleportedObject.transform.position = TargetPositionDown.transform.position;
+            if(AllowDown)
+                TeleportedObject.transform.position = TargetPositionDown.transform.position;
+            else
+                AccessDeniedDownInteraction?.StartInteraction();
         }
     }
 }

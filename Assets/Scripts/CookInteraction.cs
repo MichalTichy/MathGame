@@ -10,7 +10,7 @@ public class CookInteraction : CharacterInteractionWithSceneSwitching
         UnityEngine.Debug.Log("Cook completed!");
     }
 
-    protected override void ChangeInteractionState(bool enabled)
+    public override void ChangeInteractionState(bool enabled)
     {
         AwardCollider.enabled = enabled;
         base.ChangeInteractionState(enabled);

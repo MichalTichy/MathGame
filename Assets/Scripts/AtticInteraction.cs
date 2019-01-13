@@ -7,6 +7,9 @@ public class AtticInteraction : CharacterInteractionWithSceneSwitching
     public Stairs stairs;
 
     public AtticPuzzleArrowController Controller;
+
+    protected override TriggerMechanism TriggerMechanism => TriggerMechanism.Manual;
+
     public override void AwardPlayer()
     {
         UnityEngine.Debug.Log("Attic completed!");

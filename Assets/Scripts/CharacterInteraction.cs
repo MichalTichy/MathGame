@@ -9,28 +9,36 @@ public abstract class CharacterInteraction : MonoBehaviour
     public BoxCollider2D characterColider;
     public Canvas characterCanvas;
 
-    private bool _isActive;
-    
-    public virtual bool IsActive
+    protected virtual TriggerMechanism TriggerMechanism
     {
-        get { return _isActive; }
+        get
+        {
+            return TriggerMechanism.KeyPress;
+        }
     }
-
+    
     void OnTriggerStay2D(Collider2D other)
     {
+        if (TriggerMechanism != TriggerMechanism.KeyPress)
+            return;
+
         if (Input.GetKeyDown(KeyCode.E))
         {
             StartInteraction();
         }
     }
 
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (TriggerMechanism == TriggerMechanism.ZoneEnter)
+            StartInteraction();
+    }
+
 
     public virtual void StartInteraction()
     {
-        if (!ArePreConditionsMet() || IsActive)
+        if (!ArePreConditionsMet())
             return;
-
-        _isActive = true;
         
         ChangeInteractionState(false);
 
@@ -49,7 +57,7 @@ public abstract class CharacterInteraction : MonoBehaviour
         }
     }
 
-    protected virtual void ChangeInteractionState(bool enabled)
+    public virtual void ChangeInteractionState(bool enabled)
     {
         if (characterColider!=null)
         {
@@ -79,57 +87,9 @@ public abstract class CharacterInteraction : MonoBehaviour
 
 }
 
-public abstract class CharacterTextBubbleInteraction : CharacterInteraction
+public enum TriggerMechanism
 {
-    public DialogBubble DialogBubble;
-    
-
-    public override void StartInteraction()
-    {
-        base.StartInteraction();
-
-
-
-        ChangeInteractionState(false);
-        DialogBubble.OnClose += () =>
-        {
-
-            UnityEngine.Debug.Log("Bubble closed");
-            ChangeInteractionState(true);
-            
-        };
-
-        DialogBubble.ShowBubble();
-    }
+    KeyPress,
+    ZoneEnter,
+    Manual
 }
-
-
-public abstract class CharacterInteractionWithSceneSwitching : CharacterInteraction
-{
-    public GameObject puzzle;
-
-    public override void StartInteraction()
-    {
-        base.StartInteraction();
-        TransferControl();
-    }
-
-    public override void End()
-    {
-        base.End();
-        TransferControlBackToMainGame();
-    }
-
-    protected virtual void TransferControl()
-    {
-        CharacterMovement.Enabled = false;
-        puzzle.SetActive(true);
-    }
-
-    protected virtual void TransferControlBackToMainGame()
-    {
-        CharacterMovement.Enabled = true;
-        puzzle.SetActive(false);
-    }
-}
-
