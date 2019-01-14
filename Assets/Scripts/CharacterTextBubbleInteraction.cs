@@ -1,4 +1,6 @@
-﻿public abstract class CharacterTextBubbleInteraction : CharacterInteraction
+﻿using System;
+
+public abstract class CharacterTextBubbleInteraction : CharacterInteraction
 {
     public DialogBubble DialogBubble;
     public bool CanTalk = true;
