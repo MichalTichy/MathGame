@@ -1,6 +1,9 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections;
+using System.Threading;
+using UnityEngine;
 
-class ChangeToPandaInteraction : CharacterTextBubbleInteraction
+public class ChangeToPandaInteraction : CharacterTextBubbleInteraction
 {
     public SpriteRenderer Sister;
     public DialogBubble SecondDialog;
@@ -10,28 +13,49 @@ class ChangeToPandaInteraction : CharacterTextBubbleInteraction
     {
         base.BubbleClosed();
 
-        Sister.sprite = Resources.Load("panda", typeof(Sprite)) as Sprite;
-
-        new WaitForSeconds(2);
-
         SecondDialog.ShowBubble();
 
 
-    }
+    }                                                         
 
     protected override TriggerMechanism TriggerMechanism => TriggerMechanism.Manual;
 
-    void StartLate()
+    private void Start()
     {
+        DialogBubble.OnClose += BubbleClosed;
+        //SecondDialog.OnClose += () => End();
 
-        SecondDialog.OnClose += SecondDialogOnClose;
         StartInteraction();
 
     }
 
-    private void SecondDialogOnClose()
+    public override void StartInteraction()
     {
-        End();
+        
+        Wait(3, () =>
+        {
+            base.StartInteraction();
+
+
+            Wait(1, () =>
+            {
+                Sister.sprite = Resources.Load("panda", typeof(Sprite)) as Sprite;
+                
+                Wait(2, End); //TODO HACK
+            });
+        });
+        
+    }
+
+    public void Wait(float seconds, Action action)
+    {
+        StartCoroutine(_wait(seconds, action));
+    }
+
+    IEnumerator _wait(float time, Action callback)
+    {
+        yield return new WaitForSeconds(time);
+        callback();
     }
 
     public override void AwardPlayer()
