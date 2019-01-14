@@ -53,7 +53,7 @@ public abstract class CharacterInteraction : MonoBehaviour
         }
     }
 
-    private void ChangeCharacterStuffStatus(bool enabled)
+    protected virtual void ChangeCharacterStuffStatus(bool enabled)
     {
         if (characterColider != null)
             characterColider.enabled = enabled;
