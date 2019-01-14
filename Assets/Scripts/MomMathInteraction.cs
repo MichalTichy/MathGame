@@ -122,7 +122,7 @@ public class MomMathInteraction : CharacterInteractionWithSceneSwitching
         }
         else
         {
-            exercise.text = $"{random.Next(0, 100)} {op} {random.Next(0, 100)}";
+            exercise.text = $"{random.Next(0, 100)} {op} {random.Next(0, 100)} =";
         }
     }
 
