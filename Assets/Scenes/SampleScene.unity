@@ -302,6 +302,7 @@ GameObject:
   - component: {fileID: 92943716}
   - component: {fileID: 92943715}
   - component: {fileID: 92943712}
+  - component: {fileID: 92943719}
   m_Layer: 0
   m_Name: MainCharacter
   m_TagString: Player
@@ -321,6 +322,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 12
+  character: {fileID: 92943711}
 --- !u!212 &92943710
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -517,6 +519,24 @@ MonoBehaviour:
   CanTalk: 1
   AfterFeed: {fileID: 92943717}
   HasSausage: 0
+--- !u!95 &92943719
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 92943708}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a86dadb30247370478cdc9b7aa8791b7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &92943719
 MonoBehaviour:
   m_ObjectHideFlags: 0
