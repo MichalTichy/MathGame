@@ -8,15 +8,12 @@ public abstract class CharacterInteraction : MonoBehaviour
     [Header("Character stuffs to disable")]
     public BoxCollider2D characterColider;
     public Canvas characterCanvas;
+    private bool _completed;
 
-    protected virtual TriggerMechanism TriggerMechanism
-    {
-        get
-        {
-            return TriggerMechanism.KeyPress;
-        }
-    }
-    
+    protected virtual TriggerMechanism TriggerMechanism => TriggerMechanism.KeyPress;
+
+    public virtual bool Completed =>_completed;
+
     void OnTriggerStay2D(Collider2D other)
     {
         if (TriggerMechanism != TriggerMechanism.KeyPress)
@@ -39,9 +36,7 @@ public abstract class CharacterInteraction : MonoBehaviour
     {
         if (!ArePreConditionsMet())
             return;
-        
-        ChangeInteractionState(false);
-
+        ChangeCharacterStuffStatus(false);
         Setup();
     }
 
@@ -50,24 +45,21 @@ public abstract class CharacterInteraction : MonoBehaviour
         if (ArePostConditionsMet())
         {
             AwardPlayer();
+            _completed = true;
         }
         else
         {
-            ChangeInteractionState(true);
+            ChangeCharacterStuffStatus(true);
         }
     }
 
-    public virtual void ChangeInteractionState(bool enabled)
+    private void ChangeCharacterStuffStatus(bool enabled)
     {
-        if (characterColider!=null)
-        {
+        if (characterColider != null)
             characterColider.enabled = enabled;
-        }
 
-        if (characterCanvas!=null)
-        {
+        if (characterCanvas != null)
             characterCanvas.enabled = enabled;
-        }
     }
 
     public abstract void AwardPlayer();
@@ -79,7 +71,7 @@ public abstract class CharacterInteraction : MonoBehaviour
 
     protected virtual bool ArePreConditionsMet()
     {
-        return true;
+        return !Completed;
     }
 
     protected abstract void Setup();

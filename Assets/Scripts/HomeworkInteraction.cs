@@ -9,7 +9,7 @@ public class HomeworkInteraction : CharacterInteractionWithSceneSwitching
 {
     [Header("Award")]
     public Stairs stairs;
-    public MomInteraction Mom;
+    public MomChatInteraction Mom;
 
     [Header("Setup")]
     public Transform gridUI;
@@ -25,7 +25,6 @@ public class HomeworkInteraction : CharacterInteractionWithSceneSwitching
     {
         UnityEngine.Debug.Log("Homework completed!");
         stairs.AllowUp = true;
-        Mom.ChangeInteractionState(false);
     }
 
     protected override void Setup()

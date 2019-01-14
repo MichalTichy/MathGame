@@ -7,14 +7,8 @@ public class LibraryInteraction : CharacterInteractionWithSceneSwitching
     public BoxCollider2D AwardCollider;
     public override void AwardPlayer()
     {
+        AwardCollider.enabled = false;
         UnityEngine.Debug.Log("Library completed!");
-    }
-
-    public override void ChangeInteractionState(bool enabled)
-    {
-
-        AwardCollider.enabled = enabled;
-        base.ChangeInteractionState(enabled);
     }
 
     protected override void Setup()
