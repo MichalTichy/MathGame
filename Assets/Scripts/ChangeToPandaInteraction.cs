@@ -8,6 +8,7 @@ public class ChangeToPandaInteraction : CharacterTextBubbleInteraction
     public SpriteRenderer Sister;
     public DialogBubble SecondDialog;
     public CharacterMovement movement;
+    public ParticleSystem particles;
 
     protected override void BubbleClosed()
     {
@@ -39,7 +40,8 @@ public class ChangeToPandaInteraction : CharacterTextBubbleInteraction
 
             Wait(1, () =>
             {
-                Sister.sprite = Resources.Load("panda", typeof(Sprite)) as Sprite;
+                particles.Play();
+                Wait(0.3f, () => Sister.sprite = Resources.Load("panda", typeof(Sprite)) as Sprite);
                 
                 Wait(2, End); //TODO HACK
             });
