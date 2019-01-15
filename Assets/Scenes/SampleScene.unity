@@ -295,6 +295,7 @@ GameObject:
   - component: {fileID: 92943710}
   - component: {fileID: 92943709}
   - component: {fileID: 92943720}
+  - component: {fileID: 92943723}
   - component: {fileID: 92943719}
   - component: {fileID: 92943713}
   - component: {fileID: 92943722}
@@ -479,7 +480,7 @@ MonoBehaviour:
   BubbleOffset: {x: 0.5, y: 0.8, z: 0}
   vCurrentBubble: {fileID: 0}
   vBubble:
-  - vMessage: I should feed the dog first. Some sousage should be in the kitchen.
+  - vMessage: I should feed the dog first. Some sausage should be in the kitchen.
     vMessageForm: 0
     vBorderColor: {r: 0, g: 0, b: 0, a: 0}
     vBodyColor: {r: 1, g: 1, b: 1, a: 0}
@@ -499,7 +500,7 @@ MonoBehaviour:
   BubbleOffset: {x: 0.5, y: 0.8, z: 0}
   vCurrentBubble: {fileID: 0}
   vBubble:
-  - vMessage: Here is your sousage buddy!
+  - vMessage: Here is your sausage buddy!
     vMessageForm: 0
     vBorderColor: {r: 0, g: 0, b: 0, a: 0}
     vBodyColor: {r: 1, g: 1, b: 1, a: 0}
@@ -557,7 +558,7 @@ MonoBehaviour:
   BubbleOffset: {x: 0.5, y: 0.8, z: 0}
   vCurrentBubble: {fileID: 0}
   vBubble:
-  - vMessage: Abrakadabra!
+  - vMessage: I read one spell in grandmas book. Abrakadabra!
     vMessageForm: 0
     vBorderColor: {r: 0, g: 0, b: 0, a: 0}
     vBodyColor: {r: 1, g: 1, b: 1, a: 0}
@@ -597,6 +598,26 @@ MonoBehaviour:
   vBubble:
   - vMessage: Oh, nice. Now I have the key for the dads office.
     vMessageForm: 1
+    vBorderColor: {r: 0, g: 0, b: 0, a: 0}
+    vBodyColor: {r: 1, g: 1, b: 1, a: 0}
+    vFontColor: {r: 0, g: 0, b: 0, a: 0}
+    vClickToCloseBubble: 0
+--- !u!114 &92943723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 92943708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78e33b377035171458bfd16229c3cefb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BubbleOffset: {x: 0.5, y: 0.8, z: 0}
+  vCurrentBubble: {fileID: 0}
+  vBubble:
+  - vMessage: 'Awesome! I found this big sausage! '
+    vMessageForm: 0
     vBorderColor: {r: 0, g: 0, b: 0, a: 0}
     vBodyColor: {r: 1, g: 1, b: 1, a: 0}
     vFontColor: {r: 0, g: 0, b: 0, a: 0}
@@ -9762,6 +9783,81 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 768b781cf0fcd684eae30a2ce6d90440, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &901448408
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 901448409}
+  - component: {fileID: 901448411}
+  - component: {fileID: 901448410}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &901448409
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 901448408}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2069557277}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -118}
+  m_SizeDelta: {x: 424, y: 30}
+  m_Pivot: {x: 0.5, y: 1}
+--- !u!114 &901448410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 901448408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 25
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 2
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: You can find hint in the fathers office.
+--- !u!222 &901448411
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 901448408}
+  m_CullTransparentMesh: 0
 --- !u!1 &904147777
 GameObject:
   m_ObjectHideFlags: 0
@@ -10733,6 +10829,81 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 768b781cf0fcd684eae30a2ce6d90440, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1147887682
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1147887683}
+  - component: {fileID: 1147887685}
+  - component: {fileID: 1147887684}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1147887683
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1147887682}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1831497756}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0.000005722, y: 138}
+  m_SizeDelta: {x: 294.1, y: 56.2}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1147887684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1147887682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 20
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 2
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: You have to solve this SUDOKU!
+--- !u!222 &1147887685
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1147887682}
+  m_CullTransparentMesh: 0
 --- !u!1 &1168364109
 GameObject:
   m_ObjectHideFlags: 0
@@ -11130,8 +11301,9 @@ GameObject:
   - component: {fileID: 1202342195}
   - component: {fileID: 1202342194}
   - component: {fileID: 1202342193}
+  - component: {fileID: 1202342196}
   m_Layer: 0
-  m_Name: Sousage
+  m_Name: Sausage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11149,7 +11321,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.02058363, y: -1.2304769}
+  m_Offset: {x: 1, y: -1.1}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -11160,7 +11332,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.745122, y: 5.5390463}
+  m_Size: {x: 2.745122, y: 5.84}
   m_EdgeRadius: 0
 --- !u!212 &1202342194
 SpriteRenderer:
@@ -11221,6 +11393,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1202342196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1202342192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c9f75f77069e3749adff0a9653f0b86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterColider: {fileID: 1202342193}
+  characterCanvas: {fileID: 0}
+  FeedTheDogChatInteraction: {fileID: 92943718}
+  Dialog: {fileID: 92943723}
+  Sausage: {fileID: 1202342194}
+  DogHasSpoken: 0
 --- !u!224 &1205827648 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 224397448047115420, guid: 3f2b853aef425a34383bfc3f49d96c7f,
@@ -13320,6 +13509,7 @@ MonoBehaviour:
   characterCanvas: {fileID: 0}
   DialogBubble: {fileID: 1723608776}
   CanTalk: 1
+  SausageInteraction: {fileID: 1202342196}
   AfterInteraction: {fileID: 92943718}
   AwardCollider: {fileID: 1350129249}
 --- !u!4 &1723608774
@@ -13543,6 +13733,7 @@ RectTransform:
   m_Children:
   - {fileID: 838489722}
   - {fileID: 573086356}
+  - {fileID: 1147887683}
   m_Father: {fileID: 1389047507}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -14451,6 +14642,7 @@ RectTransform:
   - {fileID: 769203126}
   - {fileID: 904147778}
   - {fileID: 1202143003}
+  - {fileID: 901448409}
   m_Father: {fileID: 246229600}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -14542,7 +14734,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 2.68}
+  m_AnchoredPosition: {x: 0, y: 1.19}
   m_SizeDelta: {x: 43.69, y: 79.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2074438720
@@ -14695,7 +14887,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78e33b377035171458bfd16229c3cefb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BubbleOffset: {x: 0, y: 1.5, z: 0}
+  BubbleOffset: {x: 0.5, y: 0, z: 0}
   vCurrentBubble: {fileID: 0}
   vBubble:
   - vMessage: Hi sweetheart, I`ve heard that you need same math practice. Let me help
@@ -14716,7 +14908,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78e33b377035171458bfd16229c3cefb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BubbleOffset: {x: 0, y: 0, z: 0}
+  BubbleOffset: {x: 0.5, y: 0, z: 0}
   vCurrentBubble: {fileID: 0}
   vBubble:
   - vMessage: Good job :) Now please finnish your homework.

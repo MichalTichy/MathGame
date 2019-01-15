@@ -8,7 +8,7 @@ public class Appear : MonoBehaviour {
 	private List<SpriteRenderer> vImages;
 	public float valpha = 0f;
 	public bool vchoice = true;
-	public float vTimer = 5f;
+	public float vTimer = 2f;
 	private float cTime = 0f;
 	public bool needtoclick = false;
 
@@ -42,14 +42,14 @@ public class Appear : MonoBehaviour {
 			vRenderer.color = new Color (vRenderer.color.r, vRenderer.color.g, vRenderer.color.b, valpha);
 
 		if (vchoice)
-			valpha+=5f;
+			valpha+=0.5f;
 		else 
-			valpha-=5f;
+			valpha-=0.5f;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if ((vchoice && valpha < 255) || (!vchoice && valpha > 0))
+		if ((vchoice && valpha < 1) || (!vchoice && valpha > 0))
 			ImageAppear ();
 		else if (!vchoice && valpha<= 0)
 		{
@@ -67,9 +67,9 @@ public class Appear : MonoBehaviour {
 			//destroy itself
 			GameObject.Destroy (this.gameObject); 
 		}
-		else if ((valpha == 255f) &&(!needtoclick))
+		else if ((valpha >= 1f) &&(!needtoclick))
 		{
-			valpha = 254f;
+			valpha = 0.9f;
 			StartCoroutine(WaitInSeconds(3f, "False"));
 		}
 	}		
