@@ -2,6 +2,8 @@
 
 public class DogChatInteraction : CharacterTextBubbleInteraction
 {
+
+    public SausageInteraction SausageInteraction;
     protected override TriggerMechanism TriggerMechanism => TriggerMechanism.ZoneEnter;
 
 
@@ -11,7 +13,7 @@ public class DogChatInteraction : CharacterTextBubbleInteraction
     public BoxCollider2D AwardCollider;
 
     public override bool Completed => !AwardCollider.enabled;
-
+    
     public override bool ArePostConditionsMet()
     {
         return base.ArePostConditionsMet() && AfterInteraction.HasSausage;
@@ -21,6 +23,14 @@ public class DogChatInteraction : CharacterTextBubbleInteraction
     {
         AfterInteraction.StartInteraction();
         End();
+    }
+
+    public override void StartInteraction()
+    {
+       
+        SausageInteraction.DogHasSpoken = true;
+        base.StartInteraction();
+
     }
 
     public override void AwardPlayer()

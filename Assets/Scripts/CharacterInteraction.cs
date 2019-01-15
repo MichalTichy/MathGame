@@ -79,39 +79,6 @@ public abstract class CharacterInteraction : MonoBehaviour
 
 }
 
-public class SousageInteraction : CharacterInteraction
-{
-    public IShouldFeedTheDogChatInteraction FeedTheDogChatInteraction;
-    public DialogBubble Dialog;
-    public SpriteRenderer Sousage;
-    public override void AwardPlayer()
-    {
-        FeedTheDogChatInteraction.HasSausage = true;
-        Sousage.enabled = false;
-    }
-
-    public override void StartInteraction()
-    {
-        if (!ArePreConditionsMet())
-            return;
-
-
-        Dialog.ShowBubble();
-        base.StartInteraction();
-        End();
-    }
-
-    protected override bool ArePreConditionsMet()
-    {
-        return base.ArePreConditionsMet() && FeedTheDogChatInteraction.HasSausage==false;
-    }
-
-    protected override void Setup()
-    {
-        
-    }
-}
-
 public enum TriggerMechanism
 {
     KeyPress,
