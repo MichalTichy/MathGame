@@ -8,7 +8,7 @@ public class CharacterMovement : MonoBehaviour
 
     public static bool Enabled=true;
     public float moveSpeed=7f;
-    public Transform character;
+    public SpriteRenderer characterRenderer;
     public Animator animator;
     
     // Use this for initialization
@@ -22,12 +22,12 @@ public class CharacterMovement : MonoBehaviour
         Vector2 direction = new Vector2(moveSpeed * Input.GetAxis("Horizontal"), 0);
         if(direction.x < 0)
         {
-            character.rotation = new Quaternion(0, 180, 0, 0);
+            characterRenderer.flipX = true;
             animator.SetBool("isMoving", true);
         }
         else if(direction.x > 0)
         {
-            character.rotation = new Quaternion(0,0,0,0);
+            characterRenderer.flipX = false;
             animator.SetBool("isMoving", true);
         }
         else
