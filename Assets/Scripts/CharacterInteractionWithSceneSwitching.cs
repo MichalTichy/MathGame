@@ -3,7 +3,8 @@
 public abstract class CharacterInteractionWithSceneSwitching : CharacterInteraction
 {
     public GameObject puzzle;
-
+    public CharacterMovement characterMovement;
+    
     public override void StartInteraction()
     {
         base.StartInteraction();
@@ -18,13 +19,14 @@ public abstract class CharacterInteractionWithSceneSwitching : CharacterInteract
 
     protected virtual void TransferControl()
     {
-        CharacterMovement.Enabled = false;
+        characterMovement.enabled = false;
+        characterMovement.Stop();
         puzzle.SetActive(true);
     }
 
     protected virtual void TransferControlBackToMainGame()
     {
-        CharacterMovement.Enabled = true;
+        characterMovement.enabled = true;
         puzzle.SetActive(false);
     }
 }

@@ -33,16 +33,27 @@ public class Stairs : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W))
         {
             if (AllowUp)
-                TeleportedObject.transform.position = TargetPositionUp.transform.position;
+                GoUp();
             else
                 AccessDeniedUpInteraction?.StartInteraction();
         }
         else if (Input.GetKeyDown(KeyCode.S))
         {
-            if(AllowDown)
-                TeleportedObject.transform.position = TargetPositionDown.transform.position;
+            if (AllowDown)
+                GoDown();
             else
                 AccessDeniedDownInteraction?.StartInteraction();
         }
+    }
+
+    public void GoUp()
+    {
+        TeleportedObject.transform.position = TargetPositionUp.transform.position;
+    }
+
+    public void GoDown()
+    {
+
+        TeleportedObject.transform.position = TargetPositionDown.transform.position;
     }
 }

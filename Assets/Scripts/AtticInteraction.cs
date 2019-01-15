@@ -14,9 +14,7 @@ public class AtticInteraction : CharacterInteractionWithSceneSwitching
     {
         UnityEngine.Debug.Log("Attic completed!");
         stairs.AllowUp = true;
-
-        // Disable NPC and remove quest mark
-        characterCanvas.enabled = false;
+        stairs.GoUp();
     }
 
     protected override void Setup()

@@ -938,7 +938,6 @@ Transform:
   - {fileID: 1567926829}
   - {fileID: 2011400281}
   - {fileID: 1967586485}
-  - {fileID: 1312896091}
   - {fileID: 807199448}
   m_Father: {fileID: 0}
   m_RootOrder: 5
@@ -1103,7 +1102,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &246229597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1383,6 +1382,7 @@ MonoBehaviour:
   characterColider: {fileID: 353587374}
   characterCanvas: {fileID: 1183291029}
   puzzle: {fileID: 1938663963}
+  characterMovement: {fileID: 92943709}
   AwardCollider: {fileID: 1967586484}
   Dialog: {fileID: 92943722}
   CorrectBookSelected: 0
@@ -1547,6 +1547,7 @@ MonoBehaviour:
   characterColider: {fileID: 372890811}
   characterCanvas: {fileID: 1877045272}
   puzzle: {fileID: 1460658940}
+  characterMovement: {fileID: 92943709}
 --- !u!61 &372890811
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2656,6 +2657,7 @@ MonoBehaviour:
   characterColider: {fileID: 0}
   characterCanvas: {fileID: 0}
   puzzle: {fileID: 2069557276}
+  characterMovement: {fileID: 92943709}
   stairs: {fileID: 522775435}
   Controller: {fileID: 2069557280}
 --- !u!1 &527554906
@@ -8778,6 +8780,7 @@ MonoBehaviour:
   characterColider: {fileID: 680962757}
   characterCanvas: {fileID: 1272053198}
   puzzle: {fileID: 1389047506}
+  characterMovement: {fileID: 92943709}
   stairs: {fileID: 1099318607}
   Mom: {fileID: 0}
   gridUI: {fileID: 1865994723}
@@ -9203,6 +9206,7 @@ MonoBehaviour:
   characterColider: {fileID: 795063552}
   characterCanvas: {fileID: 1629797586}
   puzzle: {fileID: 1878730246}
+  characterMovement: {fileID: 92943709}
   SuccessBubble: {fileID: 795063554}
   FailBubble: {fileID: 795063553}
   AwardCollider: {fileID: 2011400280}
@@ -9313,7 +9317,7 @@ Transform:
   m_LocalScale: {x: 1, y: 8, z: 1}
   m_Children: []
   m_Father: {fileID: 157790524}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &807199449
 BoxCollider2D:
@@ -10180,7 +10184,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -118}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 424, y: 30}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &901448410
@@ -12672,60 +12676,6 @@ Transform:
   m_Father: {fileID: 157790524}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1312896090
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1312896091}
-  - component: {fileID: 1312896092}
-  m_Layer: 0
-  m_Name: MomBoundary
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1312896091
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1312896090}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15.7, y: -11.2, z: 168.54257}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 157790524}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &1312896092
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1312896090}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -1.815465}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 4.63093}
-  m_EdgeRadius: 0
 --- !u!1 &1338840349
 GameObject:
   m_ObjectHideFlags: 0
@@ -15397,7 +15347,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1878730247
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15917,7 +15867,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2069557277
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15987,7 +15937,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   awardScript: {fileID: 522775437}
-  password: 030000000500000008000000
+  password: 010000000800000006000000
   textFields:
   - {fileID: 462458554}
   - {fileID: 169018948}
@@ -16126,8 +16076,8 @@ MonoBehaviour:
   characterColider: {fileID: 0}
   characterCanvas: {fileID: 0}
   puzzle: {fileID: 1357379707}
+  characterMovement: {fileID: 92943709}
   CompletedDialog: {fileID: 2086145872}
-  MomBoundary: {fileID: 1312896092}
   Exercise1: {fileID: 1510606116}
   Exercise1Result: {fileID: 1672300383}
   Exercise2: {fileID: 1973664177}
@@ -16136,6 +16086,7 @@ MonoBehaviour:
   Exercise3Result: {fileID: 2131627243}
   Exercise4: {fileID: 1677112402}
   Exercise4Result: {fileID: 200562006}
+  CharacterMovement: {fileID: 92943709}
 --- !u!4 &2086145869
 Transform:
   m_ObjectHideFlags: 0
@@ -16165,6 +16116,7 @@ MonoBehaviour:
   characterCanvas: {fileID: 0}
   DialogBubble: {fileID: 2086145871}
   CanTalk: 1
+  CharacterMovement: {fileID: 92943709}
   AfterInteraction: {fileID: 2086145868}
 --- !u!114 &2086145871
 MonoBehaviour:

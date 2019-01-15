@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class AtticPuzzleArrowController : MonoBehaviour
 {
     public AtticInteraction awardScript;
-    public int[] password = new int[3]{1,8,6};
+    public int[] password = new int[3];
     public Text[] textFields;
     private int[] currentCode = {0, 0, 0};
 

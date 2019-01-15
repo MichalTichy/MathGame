@@ -21,7 +21,7 @@ public class DialogBubble : MonoBehaviour
             _isTalking = value;
             if (!value)
             {
-                OnClose.Invoke();
+                OnClose?.Invoke();
             }
         }
     }

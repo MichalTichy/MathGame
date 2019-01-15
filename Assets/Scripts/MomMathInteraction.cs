@@ -9,8 +9,6 @@ public class MomMathInteraction : CharacterInteractionWithSceneSwitching
     protected override TriggerMechanism TriggerMechanism => TriggerMechanism.Manual;
 
     public DialogBubble CompletedDialog;
-    public BoxCollider2D MomBoundary;
-
     public Text Exercise1;
     public InputField Exercise1Result;
 
@@ -23,10 +21,11 @@ public class MomMathInteraction : CharacterInteractionWithSceneSwitching
     public Text Exercise4;
     public InputField Exercise4Result;
 
+    public CharacterMovement CharacterMovement;
     public override void AwardPlayer()
     {
         UnityEngine.Debug.Log("Mom completed!");
-        MomBoundary.enabled = false;
+        CharacterMovement.enabled = true;
         CompletedDialog.ShowBubble();
     }
 

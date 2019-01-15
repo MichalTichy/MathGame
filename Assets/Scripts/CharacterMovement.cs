@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour
 {
-
-
-    public static bool Enabled=true;
     public float moveSpeed=7f;
     public SpriteRenderer characterRenderer;
     public Animator animator;
@@ -36,5 +33,11 @@ public class CharacterMovement : MonoBehaviour
         }
         GetComponent<Rigidbody2D>().velocity = direction;
 	}
+
+    public void Stop()
+    {
+        GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        animator.SetBool("isMoving", false);
+    }
 
 }
