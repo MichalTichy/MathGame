@@ -10,12 +10,10 @@ public class DogChatInteraction : CharacterTextBubbleInteraction
 
 
     public IShouldFeedTheDogChatInteraction AfterInteraction;
-
-    [Header("Award")]
-    public BoxCollider2D AwardCollider;
+    
 
 
-    public override bool Completed => !AwardCollider.enabled;
+    public override bool Completed => AfterInteraction.Completed;
     
     public override bool ArePostConditionsMet()
     {
@@ -52,8 +50,6 @@ public class DogChatInteraction : CharacterTextBubbleInteraction
     public override void AwardPlayer()
     {
         UnityEngine.Debug.Log("Dog completed!");
-
-        AwardCollider.enabled = false;
     }
 
     protected override void ChangeCharacterStuffStatus(bool enabled)
