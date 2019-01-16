@@ -9,11 +9,14 @@ public class FinalChangeInteraction : CharacterTextBubbleInteraction
     public DialogBubble SecondDialog;
     public CharacterMovement movement;
     public Fading fading;
+    public Camera cam;
     
     [Header("Sister stuffs")]
     public SpriteRenderer Sister;
     public ParticleSystem particles;
     public DialogBubble thirdDialog;
+
+    private float cameraZoomOutSpeed;
 
     public override void AwardPlayer()
     {
@@ -27,10 +30,25 @@ public class FinalChangeInteraction : CharacterTextBubbleInteraction
         Wait(2,() =>movement.GoToPositionOnX(50, 5));
     }
 
+    private IEnumerator ZoomOutCamera()
+    {
+        while(cam.orthographicSize < 7)
+        {
+            cam.orthographicSize += cameraZoomOutSpeed;
+            yield return null;
+        }
+    }
+
+    private void Update()
+    {
+        cameraZoomOutSpeed = Time.deltaTime;
+    }
+
     public override void StartInteraction()
     {
         Wait(1, () =>
         {
+            StartCoroutine(ZoomOutCamera());
             base.StartInteraction();
 
 
@@ -63,13 +81,7 @@ public class FinalChangeInteraction : CharacterTextBubbleInteraction
         yield return new WaitForSeconds(time);
         callback();
     }
-    
-
-    // Use this for initialization
-    void Start ()
-    {
-
-    }
+   
 
     protected override TriggerMechanism TriggerMechanism => TriggerMechanism.Manual;
 
