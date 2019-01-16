@@ -9,7 +9,6 @@ public class HomeworkInteraction : CharacterInteractionWithSceneSwitching
 {
     [Header("Award")]
     public Stairs stairs;
-    public MomChatInteraction Mom;
 
     [Header("Setup")]
     public Transform gridUI;

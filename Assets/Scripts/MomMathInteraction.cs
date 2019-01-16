@@ -21,11 +21,11 @@ public class MomMathInteraction : CharacterInteractionWithSceneSwitching
     public Text Exercise4;
     public InputField Exercise4Result;
 
-    public CharacterMovement CharacterMovement;
+
     public override void AwardPlayer()
     {
         UnityEngine.Debug.Log("Mom completed!");
-        CharacterMovement.enabled = true;
+        characterMovement.enabled = true;
         CompletedDialog.ShowBubble();
     }
 

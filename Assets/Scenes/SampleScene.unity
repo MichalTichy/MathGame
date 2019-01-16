@@ -1102,7 +1102,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &246229597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2824,7 +2824,7 @@ Prefab:
     - target: {fileID: 224397448047115420, guid: 3f2b853aef425a34383bfc3f49d96c7f,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 427
+      value: 427.5
       objectReference: {fileID: 0}
     - target: {fileID: 224397448047115420, guid: 3f2b853aef425a34383bfc3f49d96c7f,
         type: 2}
@@ -2834,7 +2834,7 @@ Prefab:
     - target: {fileID: 224397448047115420, guid: 3f2b853aef425a34383bfc3f49d96c7f,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 854
+      value: 855
       objectReference: {fileID: 0}
     - target: {fileID: 224397448047115420, guid: 3f2b853aef425a34383bfc3f49d96c7f,
         type: 2}
@@ -8782,7 +8782,6 @@ MonoBehaviour:
   puzzle: {fileID: 1389047506}
   characterMovement: {fileID: 92943709}
   stairs: {fileID: 1099318607}
-  Mom: {fileID: 0}
   gridUI: {fileID: 1865994723}
 --- !u!61 &680962757
 BoxCollider2D:
@@ -10973,7 +10972,7 @@ Prefab:
     - target: {fileID: 224397448047115420, guid: 3f2b853aef425a34383bfc3f49d96c7f,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 427
+      value: 427.5
       objectReference: {fileID: 0}
     - target: {fileID: 224397448047115420, guid: 3f2b853aef425a34383bfc3f49d96c7f,
         type: 2}
@@ -10983,7 +10982,7 @@ Prefab:
     - target: {fileID: 224397448047115420, guid: 3f2b853aef425a34383bfc3f49d96c7f,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 854
+      value: 855
       objectReference: {fileID: 0}
     - target: {fileID: 224397448047115420, guid: 3f2b853aef425a34383bfc3f49d96c7f,
         type: 2}
@@ -14641,7 +14640,7 @@ Prefab:
     - target: {fileID: 224397448047115420, guid: 3f2b853aef425a34383bfc3f49d96c7f,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 427
+      value: 427.5
       objectReference: {fileID: 0}
     - target: {fileID: 224397448047115420, guid: 3f2b853aef425a34383bfc3f49d96c7f,
         type: 2}
@@ -14651,7 +14650,7 @@ Prefab:
     - target: {fileID: 224397448047115420, guid: 3f2b853aef425a34383bfc3f49d96c7f,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 854
+      value: 855
       objectReference: {fileID: 0}
     - target: {fileID: 224397448047115420, guid: 3f2b853aef425a34383bfc3f49d96c7f,
         type: 2}
@@ -15143,7 +15142,7 @@ Prefab:
     - target: {fileID: 224397448047115420, guid: 3f2b853aef425a34383bfc3f49d96c7f,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 427
+      value: 427.5
       objectReference: {fileID: 0}
     - target: {fileID: 224397448047115420, guid: 3f2b853aef425a34383bfc3f49d96c7f,
         type: 2}
@@ -15153,7 +15152,7 @@ Prefab:
     - target: {fileID: 224397448047115420, guid: 3f2b853aef425a34383bfc3f49d96c7f,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 854
+      value: 855
       objectReference: {fileID: 0}
     - target: {fileID: 224397448047115420, guid: 3f2b853aef425a34383bfc3f49d96c7f,
         type: 2}
@@ -15867,7 +15866,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2069557277
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16086,7 +16085,6 @@ MonoBehaviour:
   Exercise3Result: {fileID: 2131627243}
   Exercise4: {fileID: 1677112402}
   Exercise4Result: {fileID: 200562006}
-  CharacterMovement: {fileID: 92943709}
 --- !u!4 &2086145869
 Transform:
   m_ObjectHideFlags: 0
