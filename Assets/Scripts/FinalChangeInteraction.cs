@@ -8,6 +8,7 @@ public class FinalChangeInteraction : CharacterTextBubbleInteraction
 {
     public DialogBubble SecondDialog;
     public CharacterMovement movement;
+    public Fading fading;
     
     [Header("Sister stuffs")]
     public SpriteRenderer Sister;
@@ -43,7 +44,10 @@ public class FinalChangeInteraction : CharacterTextBubbleInteraction
 
                     Wait(1, () => thirdDialog.ShowBubble());
 
-                    Wait(3, End); //TODO HACK});
+                    Wait(3, () => fading.FadeOut());
+                    
+
+                    Wait(5, End); //TODO HACK});
                 });
             });
         });
