@@ -13,6 +13,7 @@ public abstract class CharacterTextBubbleInteraction : CharacterInteraction
 
     protected virtual void BubbleClosed()
     {
+
         CanTalk = true;
     }
 

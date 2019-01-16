@@ -500,7 +500,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78e33b377035171458bfd16229c3cefb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BubbleOffset: {x: 0.5, y: 0.8, z: 0}
+  BubbleOffset: {x: 0.5, y: 1.5, z: 0}
   vCurrentBubble: {fileID: 0}
   vBubble:
   - vMessage: Here is your sausage buddy!
@@ -524,6 +524,7 @@ MonoBehaviour:
   characterCanvas: {fileID: 0}
   DialogBubble: {fileID: 92943716}
   CanTalk: 1
+  AwardCollider: {fileID: 1350129249}
   AfterFeed: {fileID: 92943717}
   HasSausage: 0
 --- !u!114 &92943719
@@ -19725,7 +19726,6 @@ MonoBehaviour:
   CanTalk: 1
   SausageInteraction: {fileID: 1202342196}
   AfterInteraction: {fileID: 92943718}
-  AwardCollider: {fileID: 1350129249}
 --- !u!4 &1723608774
 Transform:
   m_ObjectHideFlags: 0
