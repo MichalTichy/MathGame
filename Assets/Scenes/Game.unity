@@ -295,7 +295,6 @@ GameObject:
   - component: {fileID: 92943710}
   - component: {fileID: 92943709}
   - component: {fileID: 92943720}
-  - component: {fileID: 92943724}
   - component: {fileID: 92943723}
   - component: {fileID: 92943719}
   - component: {fileID: 92943713}
@@ -308,6 +307,7 @@ GameObject:
   - component: {fileID: 92943712}
   - component: {fileID: 92943721}
   - component: {fileID: 92943725}
+  - component: {fileID: 92943726}
   - component: {fileID: 92943724}
   m_Layer: 0
   m_Name: MainCharacter
@@ -639,26 +639,6 @@ MonoBehaviour:
   BubbleOffset: {x: 0.5, y: 0.8, z: 0}
   vCurrentBubble: {fileID: 0}
   vBubble:
-  - vMessage: Great! Now I can go upstairs.
-    vMessageForm: 1
-    vBorderColor: {r: 0, g: 0, b: 0, a: 0}
-    vBodyColor: {r: 1, g: 1, b: 1, a: 0}
-    vFontColor: {r: 0, g: 0, b: 0, a: 0}
-    vClickToCloseBubble: 0
---- !u!114 &92943724
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 92943708}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78e33b377035171458bfd16229c3cefb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BubbleOffset: {x: 0.5, y: 0.8, z: 0}
-  vCurrentBubble: {fileID: 0}
-  vBubble:
   - vMessage: Maybe it's the word that I am looking for. Let's try it. TEDDY!
     vMessageForm: 0
     vBorderColor: {r: 0, g: 0, b: 0, a: 0}
@@ -682,6 +662,26 @@ MonoBehaviour:
   - vMessage: Finally i got here. There is something written on the blackboard. I
       will check it.
     vMessageForm: 0
+    vBorderColor: {r: 0, g: 0, b: 0, a: 0}
+    vBodyColor: {r: 1, g: 1, b: 1, a: 0}
+    vFontColor: {r: 0, g: 0, b: 0, a: 0}
+    vClickToCloseBubble: 0
+--- !u!114 &92943726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 92943708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78e33b377035171458bfd16229c3cefb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BubbleOffset: {x: 0.5, y: 0.8, z: 0}
+  vCurrentBubble: {fileID: 0}
+  vBubble:
+  - vMessage: Now I can go upstairs.
+    vMessageForm: 1
     vBorderColor: {r: 0, g: 0, b: 0, a: 0}
     vBodyColor: {r: 1, g: 1, b: 1, a: 0}
     vFontColor: {r: 0, g: 0, b: 0, a: 0}
@@ -13712,7 +13712,7 @@ MonoBehaviour:
   puzzle: {fileID: 1389047506}
   characterMovement: {fileID: 92943709}
   stairs: {fileID: 1099318607}
-  GoUpBubble: {fileID: 92943724}
+  GoUpBubble: {fileID: 92943726}
   gridUI: {fileID: 1865994723}
 --- !u!61 &680962757
 BoxCollider2D:

@@ -129,6 +129,6 @@ public class HomeworkInteraction : CharacterInteractionWithSceneSwitching
 
     private bool IsRepeating(int[] a)
     {
-        return a.Where(i => i == 0).GroupBy(i => i).Any(gp => gp.Count() > 1);
+        return a.GroupBy(i => i).Any(gp => gp.Count() > 1);
     }
 }
