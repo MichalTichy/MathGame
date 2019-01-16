@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -33,6 +34,34 @@ public class CharacterMovement : MonoBehaviour
         }
         GetComponent<Rigidbody2D>().velocity = direction;
 	}
+
+    public void GoToPositionOnX(int x, int speed)
+    {
+        StartCoroutine(GoToPositionOnXCoroutine(x,speed));
+    }
+
+    private IEnumerator GoToPositionOnXCoroutine(int x, int speed)
+    {
+        float diference = Math.Abs(transform.position.x - x);
+        while (diference > 0.1f)
+        {
+            animator.SetBool("isMoving", true);
+            if (diference > 0)
+            {
+                GetComponent<Rigidbody2D>().velocity = new Vector2(-speed, 0);
+                characterRenderer.flipX = true;
+            }
+            else
+            {
+                GetComponent<Rigidbody2D>().velocity = new Vector2(speed, 0);
+                characterRenderer.flipX = false ;
+            }
+            diference = Math.Abs(transform.position.x - x);
+            yield return null;
+        }
+        animator.SetBool("isMoving", false);
+        GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+    }
 
     public void Stop()
     {
