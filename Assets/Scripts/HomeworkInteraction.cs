@@ -10,6 +10,9 @@ public class HomeworkInteraction : CharacterInteractionWithSceneSwitching
     [Header("Award")]
     public Stairs stairs;
 
+    public DialogBubble GoUpBubble;
+
+
     [Header("Setup")]
     public Transform gridUI;
 
@@ -24,6 +27,7 @@ public class HomeworkInteraction : CharacterInteractionWithSceneSwitching
     {
         UnityEngine.Debug.Log("Homework completed!");
         stairs.AllowUp = true;
+        GoUpBubble.ShowBubble();
     }
 
     protected override void Setup()

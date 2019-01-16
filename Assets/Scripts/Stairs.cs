@@ -30,14 +30,14 @@ public class Stairs : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D other)
     {
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
         {
             if (AllowUp)
                 GoUp();
             else
                 AccessDeniedUpInteraction?.StartInteraction();
         }
-        else if (Input.GetKeyDown(KeyCode.S))
+        else if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
         {
             if (AllowDown)
                 GoDown();

@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections;
+using UnityEngine;
 
 public class DogChatInteraction : CharacterTextBubbleInteraction
 {
@@ -12,6 +14,7 @@ public class DogChatInteraction : CharacterTextBubbleInteraction
     [Header("Award")]
     public BoxCollider2D AwardCollider;
 
+
     public override bool Completed => !AwardCollider.enabled;
     
     public override bool ArePostConditionsMet()
@@ -21,7 +24,7 @@ public class DogChatInteraction : CharacterTextBubbleInteraction
 
     protected override void BubbleClosed()
     {
-        AfterInteraction.StartInteraction();
+        base.BubbleClosed();
         End();
     }
 
@@ -30,7 +33,20 @@ public class DogChatInteraction : CharacterTextBubbleInteraction
        
         SausageInteraction.DogHasSpoken = true;
         base.StartInteraction();
+        Wait(0.5f, () => AfterInteraction.StartInteraction());
+        
 
+    }
+
+    public void Wait(float seconds, Action action)
+    {
+        StartCoroutine(_wait(seconds, action));
+    }
+
+    IEnumerator _wait(float time, Action callback)
+    {
+        yield return new WaitForSeconds(time);
+        callback();
     }
 
     public override void AwardPlayer()
