@@ -52,20 +52,20 @@ public class FinalChangeInteraction : CharacterTextBubbleInteraction
             base.StartInteraction();
 
 
-            Wait(4, () =>
+            Wait(5, () =>
             {
                 SecondDialog.ShowBubble();
-                Wait(0.7f, () =>
+                Wait(2f, () =>
                 {
                     particles.Play();
                     Wait(0.3f, () => Sister.sprite = Resources.Load("sister", typeof(Sprite)) as Sprite);
 
-                    Wait(1, () => thirdDialog.ShowBubble());
+                    Wait(4, () => thirdDialog.ShowBubble());
 
-                    Wait(3, () => fading.FadeOut());
+                    Wait(8, () => fading.FadeOut());
                     
 
-                    Wait(5, End); //TODO HACK});
+                    Wait(10, End); //TODO HACK});
                 });
             });
         });

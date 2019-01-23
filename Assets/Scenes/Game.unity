@@ -16413,7 +16413,6 @@ GameObject:
   - component: {fileID: 1099318606}
   - component: {fileID: 1099318605}
   - component: {fileID: 1099318607}
-  - component: {fileID: 1099318608}
   m_Layer: 0
   m_Name: StairsFloor1
   m_TagString: Untagged
@@ -16477,17 +16476,6 @@ MonoBehaviour:
   TargetPositionDown: {fileID: 0}
   AccessDeniedUpInteraction: {fileID: 92943715}
   AccessDeniedDownInteraction: {fileID: 0}
---- !u!114 &1099318608
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1099318604}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 104e9bfa4e447b440abeedf704283b76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1124055597
 GameObject:
   m_ObjectHideFlags: 0
