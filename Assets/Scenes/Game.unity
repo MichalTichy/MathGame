@@ -484,7 +484,7 @@ MonoBehaviour:
   vCurrentBubble: {fileID: 0}
   vBubble:
   - vMessage: I should feed the dog first. Some sausage should be in the kitchen.
-    vMessageForm: 0
+    vMessageForm: 1
     vBorderColor: {r: 0, g: 0, b: 0, a: 0}
     vBodyColor: {r: 1, g: 1, b: 1, a: 0}
     vFontColor: {r: 0, g: 0, b: 0, a: 0}
@@ -660,7 +660,7 @@ MonoBehaviour:
   BubbleOffset: {x: 0.5, y: 0.8, z: 0}
   vCurrentBubble: {fileID: 0}
   vBubble:
-  - vMessage: Finally i got here. There is something written on the blackboard. I
+  - vMessage: Finally I got here. There is something written on the blackboard. I
       will check it.
     vMessageForm: 0
     vBorderColor: {r: 0, g: 0, b: 0, a: 0}
